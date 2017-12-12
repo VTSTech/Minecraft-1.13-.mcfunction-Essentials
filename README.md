@@ -1,4 +1,4 @@
-Minecraft 1.13 .mcfunction Essentials v0.0.1-r00
+Minecraft 1.13 .mcfunction Essentials v0.0.1-r01
 
 Written by Nigel Todman (www.NigelTodman.com)
 
@@ -7,7 +7,7 @@ Development Server: MC.NIGELTODMAN.COM
 Config:
 
 
-Line 18 of gameloop.mcfunction, Specify your world spawn coords here.
+Line 16 of gameloop.mcfunction, Specify your world spawn coords here.
 
 Usage:
 
@@ -25,19 +25,25 @@ Notes:
 
 Players can obtain a Warp Book with /function v0923:warpbook
 
-No book for shop yet, but soon.
-
-For now...
-
-Buy minecraft:bread       /trigger buy set 1
-
-Buy minecraft:torch       /trigger buy set 2
-
-Buy minecraft:coal        /trigger buy set 3
-
-Buy minecraft:iron_ingot  /trigger buy set 4
+Players can obtain a Shop Book with /function v0923:shopbook
 
 Changelog:
+
+
+v0.0.1-r01 12/11/2017 11:12:51PM
+
+
+Added shopbook
+
+Players obtain with /function v0923:shopbook
+
+Added gold to the shop
+
+Money now rewarded for planting trees.
+
+Added treecount function
+
+Removed extra woodcount function call
 
 
 v0.0.1-r00 12/11/2017 8:52:11PM
