@@ -2,8 +2,8 @@
 # Writtten by Nigel Todman (www.NigelTodman.com)
 #
 # Init config variables
-scoreboard objectives add enablebasicincome dummy
-scoreboard objectives add enableplayerhead dummy
+scoreboard objectives add usebasicincome dummy
+scoreboard objectives add useplayerhead dummy
 scoreboard objectives add basicincomeamt dummy
 scoreboard objectives add freeshulkerbox dummy
 scoreboard objectives add setupinit dummy
@@ -15,12 +15,12 @@ scoreboard players add @s setupinit 1
 scoreboard players set @a basicincomeint -72000
 scoreboard players set @a basicincomeamt 1200
 scoreboard players set @a freeshulkerbox 1
-scoreboard players set @a enablebasicincome 1
-scoreboard players set @a enableplayerhead 1
+scoreboard players set @a usebasicincome 1
+scoreboard players set @a useplayerhead 1
 # End_Config
 # Setup Triggers
-say Initializing .mcfunction Essentials v0.0.1-r03 setup...
-say Adding triggers...
+tell @s Initializing .mcfunction Essentials v0.0.1-r03 setup...
+tell @s Adding triggers...
 scoreboard objectives add spawn trigger
 scoreboard objectives add rtp trigger
 scoreboard objectives add buy trigger
@@ -30,7 +30,7 @@ scoreboard objectives add basicincome trigger
 scoreboard objectives add getshopbook trigger
 scoreboard objectives add getwarpbook trigger
 # Setup player/scoreboard vars
-say Adding logic variables...
+tell @s Adding logic variables...
 scoreboard objectives add coords_x dummy
 scoreboard objectives add coords_y dummy
 scoreboard objectives add coords_z dummy
@@ -80,7 +80,7 @@ scoreboard objectives add rnd dummy
 scoreboard objectives add totalkills totalKillCount Kills
 scoreboard objectives add hp health
 # Setup Counters
-say Adding counter variables...
+tell @s Adding counter variables...
 scoreboard objectives add killcounter totalKillCount
 scoreboard objectives add woodcounter dummy
 scoreboard objectives add wood1 minecraft.mined:minecraft.acacia_log
@@ -127,7 +127,11 @@ scoreboard objectives add timeonline minecraft.custom:minecraft.play_one_minute
 scoreboard objectives add timecheck dummy
 scoreboard objectives add timediff dummy
 # Setup Scoreboard Display
-say Initializing Scoreboard Display...
+tell @s Initializing Scoreboard Display...
 scoreboard objectives setdisplay sidebar totalkills
 scoreboard objectives setdisplay list money
-say .mcfunction Essentials v0.0.1-r03 Setup Complete!
+# Giving away free stuff per config
+execute as @s[scores={freeshulkerbox=1},scores={setupinit=1}] run give @s minecraft:lime_shulker_box
+# Distributing Basic Income
+execute as @s[scores={usebasicincome=1},scores={setupinit=1}] run scoreboard players operation @s money = @s basicincomeamt
+tell @s .mcfunction Essentials v0.0.1-r03 Setup Complete!

@@ -8,11 +8,7 @@
 scoreboard players add @a loopcnt 1
 scoreboard players add @a tickcount 1
 ## Have players run setup?
-function v0923:setup
-## store coords for players
-execute as @a store result score @s coords_x run data get entity @s Pos[0]
-execute as @a store result score @s coords_y run data get entity @s Pos[1]
-execute as @a store result score @s coords_z run data get entity @s Pos[2]
+execute as @a[scores={loopcnt=50..}] run function v0923:setup
 ## display sidebar
 scoreboard objectives setdisplay sidebar totalkills
 ## trigger events
@@ -20,8 +16,6 @@ execute as @a[scores={spawn=1..}] run tp @s -167 72 256
 execute as @a[scores={rtp=1..}] run spreadplayers 0 30000 50000 30000 true @s
 execute as @a[scores={getshopbook=1..}] run function v0923:shopbook
 execute as @a[scores={getwarpbook=1..}] run function v0923:warpbook
-## if buy is >= 1, give player an item if they have enough money. subtract money
-function v0923:processshop
 ## Players have exited the store. Reset the check for the next purchase
 execute as @a[scores={buy=1..},scores={buycheck=1..}] run scoreboard players set @s buycheck 0
 ## reset triggers
@@ -36,7 +30,14 @@ execute as @a[scores={getwarpbook=1..}] run scoreboard players set @s getwarpboo
 #scoreboard players operation @s timediff -= @s timeonline
 #execute as @a run execute if score @s timediff > @s thirty run function v0923:processrewards
 ### if tick count is greater than 50, do these things...
+## store coords for players
+execute as @a[scores={loopcnt=50..}] store result score @s coords_x run data get entity @s Pos[0]
+execute as @a[scores={loopcnt=50..}] store result score @s coords_y run data get entity @s Pos[1]
+execute as @a[scores={loopcnt=50..}] store result score @s coords_z run data get entity @s Pos[2]
+## Process Rewards
 execute as @a[scores={loopcnt=50..}] run function v0923:processrewards
+## Process Shop
+execute as @a[scores={loopcnt=50..}] run function v0923:processshop
 ### if tick count is greater than 500, do these things...
 execute as @a[scores={loopcnt=500..}] run scoreboard players enable @s spawn
 execute as @a[scores={loopcnt=500..}] run scoreboard players enable @s rtp
@@ -45,5 +46,5 @@ execute as @a[scores={loopcnt=500..}] run scoreboard players enable @s sell
 execute as @a[scores={loopcnt=500..}] run scoreboard players enable @s rankup
 execute as @a[scores={loopcnt=500..}] run scoreboard players enable @s getshopbook
 execute as @a[scores={loopcnt=500..}] run scoreboard players enable @s getwarpbook
-### if tick count is greater than 30, reset it
+### if tick count is greater than 501, reset it
 execute as @a[scores={loopcnt=501..}] run scoreboard players set @s loopcnt 0
