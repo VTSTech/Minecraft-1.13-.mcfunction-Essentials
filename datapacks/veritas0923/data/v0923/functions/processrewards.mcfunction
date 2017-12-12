@@ -1,4 +1,4 @@
-# .mcfunction Essentials v0.0.1-r00 12/11/2017 8:52:11PM
+# .mcfunction Essentials v0.0.1-r01 12/11/2017 11:12:51PM
 # Writtten by Nigel Todman (www.NigelTodman.com)
 #execute if score <target> <targetObjective> = <source> <sourceObjective>
 execute if score @s killcounter >= @s one run scoreboard players add @s money 10
@@ -15,4 +15,5 @@ scoreboard players set @a redstonecounter 0
 scoreboard players set @a diamondcounter 0
 #UpdateSB in stonecount
 function v0923:woodcount
+function v0923:treecount
 function v0923:stonecount

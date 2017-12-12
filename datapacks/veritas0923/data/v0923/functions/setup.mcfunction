@@ -1,4 +1,4 @@
-# .mcfunction Essentials v0.0.1-r00 12/11/2017 8:52:11PM
+# .mcfunction Essentials v0.0.1-r01 12/11/2017 11:12:51PM
 # Writtten by Nigel Todman (www.NigelTodman.com)
 #
 # Start_Config
@@ -13,7 +13,7 @@
 #scoreboard objectives add givehead 1
 # End_Config
 # Setup Triggers
-say Initializing .mcfunction Essentials v0.0.1-r00 setup...
+say Initializing .mcfunction Essentials v0.0.1-r01 setup...
 say Adding triggers...
 scoreboard objectives add spawn trigger
 scoreboard objectives add rtp trigger
@@ -78,6 +78,13 @@ scoreboard objectives add stone1 minecraft.mined:minecraft.stone
 scoreboard objectives add stone2 minecraft.mined:minecraft.andesite
 scoreboard objectives add stone3 minecraft.mined:minecraft.diorite
 scoreboard objectives add stone4 minecraft.mined:minecraft.granite
+scoreboard objectives add treecounter dummy
+scoreboard objectives add tree1 minecraft.used:minecraft.acacia_sapling
+scoreboard objectives add tree2 minecraft.used:minecraft.birch_sapling
+scoreboard objectives add tree3 minecraft.used:minecraft.dark_oak_sapling
+scoreboard objectives add tree4 minecraft.used:minecraft.jungle_sapling
+scoreboard objectives add tree5 minecraft.used:minecraft.oak_sapling
+scoreboard objectives add tree6 minecraft.used:minecraft.spruce_sapling
 scoreboard objectives add coalcounter minecraft.mined:minecraft.coal_ore
 scoreboard objectives add ironcounter minecraft.mined:minecraft.iron_ore
 scoreboard objectives add goldcounter minecraft.mined:minecraft.gold_ore
@@ -92,6 +99,7 @@ scoreboard objectives add rank dummy Rank
 scoreboard objectives add money dummy Money
 scoreboard players set @a killcounter 0
 scoreboard players set @a woodcounter 0
+scoreboard players set @a treecounter 0
 scoreboard players set @a stonecounter 0
 scoreboard players set @a coalcounter 0
 scoreboard players set @a ironcounter 0
@@ -102,4 +110,4 @@ scoreboard players set @a diamondcounter 0
 say Initializing Scoreboard Display...
 scoreboard objectives setdisplay sidebar Character
 scoreboard objectives setdisplay list hp
-say .mcfunction Essentials v0.0.1-r00 Setup Complete!
+say .mcfunction Essentials v0.0.1-r01 Setup Complete!
