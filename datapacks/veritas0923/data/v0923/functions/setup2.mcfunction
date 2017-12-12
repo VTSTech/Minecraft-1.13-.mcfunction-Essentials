@@ -1,4 +1,4 @@
-# .mcfunction Essentials v0.0.1-r03 12/12/2017 4:32:08AM
+# .mcfunction Essentials v0.0.1-r03 12/12/2017 5:49:01AM
 # Writtten by Nigel Todman (www.NigelTodman.com)
 #
 # Init config variables
@@ -8,8 +8,8 @@ scoreboard objectives add basicincomeamt dummy
 scoreboard objectives add freeshulkerbox dummy
 scoreboard objectives add setupinit dummy
 scoreboard objectives add setuponce dummy
-scoreboard players set @s setuponce 1
-scoreboard players set @s setupinit 1
+scoreboard players add @s setuponce 1
+scoreboard players add @s setupinit 1
 # Start_Config
 # Set to 0 to disable the following options
 scoreboard players set @a basicincomeint -72000

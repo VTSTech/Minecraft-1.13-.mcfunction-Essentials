@@ -1,12 +1,12 @@
-# .mcfunction Essentials v0.0.1-r03 12/12/2017 4:32:08AM
+# .mcfunction Essentials v0.0.1-r03 12/12/2017 5:49:01AM
 # Writtten by Nigel Todman (www.NigelTodman.com)
 #execute if score <target> <targetObjective> = <source> <sourceObjective>
-execute if score @s killcounter >= @s one run scoreboard players add @s money 10
-execute if score @s coalcounter >= @s one run scoreboard players add @s money 5
-execute if score @s ironcounter >= @s one run scoreboard players add @s money 8
-execute if score @s goldcounter >= @s one run scoreboard players add @s money 20
-execute if score @s redstonecounter >= @s one run scoreboard players add @s money 12
-execute if score @s diamondcounter >= @s one run scoreboard players add @s money 50
+execute as @a[scores={killcounter=1..}] run scoreboard players add @s money 10
+execute as @a[scores={coalcounter=1..}] run scoreboard players add @s money 5
+execute as @a[scores={ironcounter=1..}] run scoreboard players add @s money 8
+execute as @a[scores={goldcounter=1..}] run scoreboard players add @s money 20
+execute as @a[scores={redstonecounter=1..}] run scoreboard players add @s money 12
+execute as @a[scores={diamondcounter=1..}] run scoreboard players add @s money 50
 scoreboard players set @a killcounter 0
 scoreboard players set @a coalcounter 0
 scoreboard players set @a ironcounter 0

@@ -1,4 +1,4 @@
-# .mcfunction Essentials v0.0.1-r03 12/12/2017 4:32:08AM
+# .mcfunction Essentials v0.0.1-r03 12/12/2017 5:49:01AM
 # Writtten by Nigel Todman (www.NigelTodman.com)
 #wood1 minecraft.mined:minecraft.acacia_log
 #wood2 minecraft.mined:minecraft.birch_log
@@ -6,17 +6,17 @@
 #wood4 minecraft.mined:minecraft.jungle_log
 #wood5 minecraft.mined:minecraft.oak_log
 #wood6 minecraft.mined:minecraft.spruce_log
-execute if score @s wood1 >= @s one run scoreboard players add @s woodcounter 1
-execute if score @s wood2 >= @s one run scoreboard players add @s woodcounter 1
-execute if score @s wood3 >= @s one run scoreboard players add @s woodcounter 1
-execute if score @s wood4 >= @s one run scoreboard players add @s woodcounter 1
-execute if score @s wood5 >= @s one run scoreboard players add @s woodcounter 1
-execute if score @s wood6 >= @s one run scoreboard players add @s woodcounter 1
-execute if score @s woodcounter >= @s one run scoreboard players add @s money 5
-scoreboard players set @s woodcounter 0
-scoreboard players set @s wood1 0
-scoreboard players set @s wood2 0
-scoreboard players set @s wood3 0
-scoreboard players set @s wood4 0
-scoreboard players set @s wood5 0
-scoreboard players set @s wood6 0
+execute as @a[scores={wood1=1..}] run scoreboard players add @s woodcounter 1
+execute as @a[scores={wood2=1..}] run scoreboard players add @s woodcounter 1
+execute as @a[scores={wood3=1..}] run scoreboard players add @s woodcounter 1
+execute as @a[scores={wood4=1..}] run scoreboard players add @s woodcounter 1
+execute as @a[scores={wood5=1..}] run scoreboard players add @s woodcounter 1
+execute as @a[scores={wood6=1..}] run scoreboard players add @s woodcounter 1
+execute as @a[scores={woodcounter=1..}] run scoreboard players add @s money 5
+scoreboard players set @a woodcounter 0
+scoreboard players set @a wood1 0
+scoreboard players set @a wood2 0
+scoreboard players set @a wood3 0
+scoreboard players set @a wood4 0
+scoreboard players set @a wood5 0
+scoreboard players set @a wood6 0

@@ -1,4 +1,4 @@
-# .mcfunction Essentials v0.0.1-r03 12/12/2017 4:32:08AM
+# .mcfunction Essentials v0.0.1-r03 12/12/2017 5:49:01AM
 # Writtten by Nigel Todman (www.NigelTodman.com)
 ## Are players in inOverworld?
 #scoreboard players set @a inOverworld 0
@@ -7,8 +7,6 @@
 ##increment tick count
 scoreboard players add @a loopcnt 1
 scoreboard players add @a tickcount 1
-scoreboard objectives add one dummy
-scoreboard players set @a one 1
 ## Have players run setup?
 function v0923:setup
 ## store coords for players
@@ -25,7 +23,7 @@ execute as @a[scores={getwarpbook=1..}] run function v0923:warpbook
 ## if buy is >= 1, give player an item if they have enough money. subtract money
 function v0923:processshop
 ## Players have exited the store. Reset the check for the next purchase
-execute as @s run execute if score @s buy = @s one run execute if score @s buycheck = @s one run scoreboard players set @s buycheck 0
+execute as @a[scores={buy=1..},scores={buycheck=1..}] run scoreboard players set @s buycheck 0
 ## reset triggers
 execute as @a[scores={spawn=1..}] run scoreboard players set @s spawn 0
 execute as @a[scores={rtp=1..}] run scoreboard players set @s rtp 0
@@ -33,18 +31,19 @@ execute as @a[scores={buy=1..}] run scoreboard players set @s buy 0
 execute as @a[scores={buycheck=1..}] run scoreboard players set @s buycheck 0
 execute as @a[scores={getshopbook=1..}] run scoreboard players set @s getshopbook 0
 execute as @a[scores={getwarpbook=1..}] run scoreboard players set @s getwarpbook 0
-scoreboard players enable @a spawn
-scoreboard players enable @a rtp
-scoreboard players enable @a buy
-scoreboard players enable @a sell
-scoreboard players enable @a rankup
-scoreboard players enable @a getshopbook
-scoreboard players enable @a getwarpbook
 ### timed events
 #scoreboard players operation @s timediff = @s timecheck
 #scoreboard players operation @s timediff -= @s timeonline
 #execute as @a run execute if score @s timediff > @s thirty run function v0923:processrewards
-### if tick count is greater than 30, do these things...
-execute as @a run execute if score @s loopcnt > @s thirty run function v0923:processrewards
+### if tick count is greater than 50, do these things...
+execute as @a[scores={loopcnt=50..}] run function v0923:processrewards
+### if tick count is greater than 500, do these things...
+execute as @a[scores={loopcnt=500..}] run scoreboard players enable @s spawn
+execute as @a[scores={loopcnt=500..}] run scoreboard players enable @s rtp
+execute as @a[scores={loopcnt=500..}] run scoreboard players enable @s buy
+execute as @a[scores={loopcnt=500..}] run scoreboard players enable @s sell
+execute as @a[scores={loopcnt=500..}] run scoreboard players enable @s rankup
+execute as @a[scores={loopcnt=500..}] run scoreboard players enable @s getshopbook
+execute as @a[scores={loopcnt=500..}] run scoreboard players enable @s getwarpbook
 ### if tick count is greater than 30, reset it
-execute as @a run execute if score @s loopcnt > @s thirty run scoreboard players set @s loopcnt 0
+execute as @a[scores={loopcnt=501..}] run scoreboard players set @s loopcnt 0
