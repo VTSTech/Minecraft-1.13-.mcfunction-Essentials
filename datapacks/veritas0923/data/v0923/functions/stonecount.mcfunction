@@ -1,4 +1,4 @@
-# .mcfunction Essentials v0.0.1-r02 12/12/2017 1:54:05AM
+# .mcfunction Essentials v0.0.1-r03 12/12/2017 4:32:08AM
 # Writtten by Nigel Todman (www.NigelTodman.com)
 #stone1 minecraft.mined:minecraft.stone
 #stone2 minecraft.mined:minecraft.andesite
@@ -15,5 +15,5 @@ scoreboard players set @s stone2 0
 scoreboard players set @s stone3 0
 scoreboard players set @s stone4 0
 #UpdateSB
-scoreboard players operation $ Character = @s money
-scoreboard players operation Kills Character = @s totalkills
+scoreboard players operation @s Character = @s money
+scoreboard players operation @s Character = @s totalkills

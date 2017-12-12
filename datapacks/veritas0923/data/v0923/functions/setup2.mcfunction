@@ -1,4 +1,4 @@
-# .mcfunction Essentials v0.0.1-r02 12/12/2017 1:54:05AM
+# .mcfunction Essentials v0.0.1-r03 12/12/2017 4:32:08AM
 # Writtten by Nigel Todman (www.NigelTodman.com)
 #
 # Init config variables
@@ -19,7 +19,6 @@ scoreboard players set @a enablebasicincome 1
 scoreboard players set @a enableplayerhead 1
 # End_Config
 # Setup Triggers
-say Initializing .mcfunction Essentials v0.0.1-r01 setup...
 say Adding triggers...
 scoreboard objectives add spawn trigger
 scoreboard objectives add rtp trigger
@@ -27,6 +26,8 @@ scoreboard objectives add buy trigger
 scoreboard objectives add sell trigger
 scoreboard objectives add rankup trigger
 scoreboard objectives add basicincome trigger
+scoreboard objectives add getshopbook trigger
+scoreboard objectives add getwarpbook trigger
 # Setup player/scoreboard vars
 say Adding logic variables...
 scoreboard objectives add coords_x dummy
@@ -126,6 +127,5 @@ scoreboard objectives add timecheck dummy
 scoreboard objectives add timediff dummy
 # Setup Scoreboard Display
 say Initializing Scoreboard Display...
-scoreboard objectives setdisplay sidebar Character
-scoreboard objectives setdisplay list hp
-say .mcfunction Essentials v0.0.1-r01 Setup Complete!
+scoreboard objectives setdisplay sidebar totalkills
+scoreboard objectives setdisplay list money

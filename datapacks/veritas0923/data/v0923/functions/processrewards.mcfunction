@@ -1,4 +1,4 @@
-# .mcfunction Essentials v0.0.1-r02 12/12/2017 1:54:05AM
+# .mcfunction Essentials v0.0.1-r03 12/12/2017 4:32:08AM
 # Writtten by Nigel Todman (www.NigelTodman.com)
 #execute if score <target> <targetObjective> = <source> <sourceObjective>
 execute if score @s killcounter >= @s one run scoreboard players add @s money 10
