@@ -1,6 +1,8 @@
-#Minecraft 1.13 .mcfunction Essentials v0.0.1-r00
-#Written by Nigel Todman (www.NigelTodman.com)
-#Development Server: MC.NIGELTODMAN.COM
+Minecraft 1.13 .mcfunction Essentials v0.0.1-r00
+
+Written by Nigel Todman (www.NigelTodman.com)
+
+Development Server: MC.NIGELTODMAN.COM
 
 Config:
 
