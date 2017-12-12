@@ -1,0 +1,3 @@
+# .mcfunction Essentials v0.0.1-r00 12/11/2017 8:52:11PM
+# Writtten by Nigel Todman (www.NigelTodman.com)
+give @s minecraft:written_book{title:"Essentials Warp v0.0.1-r00",author:"",pages:["{text:\"Warps: \\n\\n\",color:dark_gray,extra:[{text:\"Spawn \",clickEvent:{action:run_command,value:\"/trigger spawn\"}},{text:\"\\n\\nRandom TP \",clickEvent:{action:run_command,value:\"/trigger rtp\"}}]}"]} 1
