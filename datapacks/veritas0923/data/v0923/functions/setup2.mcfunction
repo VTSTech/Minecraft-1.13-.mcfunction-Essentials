@@ -19,6 +19,7 @@ scoreboard players set @a enablebasicincome 1
 scoreboard players set @a enableplayerhead 1
 # End_Config
 # Setup Triggers
+say Initializing .mcfunction Essentials v0.0.1-r03 setup...
 say Adding triggers...
 scoreboard objectives add spawn trigger
 scoreboard objectives add rtp trigger
@@ -129,3 +130,4 @@ scoreboard objectives add timediff dummy
 say Initializing Scoreboard Display...
 scoreboard objectives setdisplay sidebar totalkills
 scoreboard objectives setdisplay list money
+say .mcfunction Essentials v0.0.1-r03 Setup Complete!

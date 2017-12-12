@@ -1,4 +1,4 @@
-Minecraft 1.13 .mcfunction Essentials v0.0.1-r01
+Minecraft 1.13 .mcfunction Essentials v0.0.1-r03
 
 Written by Nigel Todman (www.NigelTodman.com)
 
@@ -7,7 +7,7 @@ Development Server: MC.NIGELTODMAN.COM
 Config:
 
 
-Line 16 of gameloop.mcfunction, Specify your world spawn coords here.
+Line 21 of gameloop.mcfunction, Specify your world spawn coords here.
 
 Usage:
 
@@ -23,11 +23,35 @@ That's it.
 Notes:
 
 
-Players can obtain a Warp Book with /function v0923:warpbook
+Players can obtain a Warp Book with /trigger getwarpbook
 
-Players can obtain a Shop Book with /function v0923:shopbook
+Players can obtain a Shop Book with /trigger getshopbook
 
 Changelog:
+
+
+v0.0.1-r03 12/12/2017 4:32:08AM
+
+Rewrote the shop
+
+Script now actually works for non-opped players too!
+
+Added getshopbook and getwarpbook triggers.
+
+Script is now tested with a non-op player.
+
+
+v0.0.1-r02 12/12/2017 1:54:05AM
+
+Moved setup.mcfunction into setup2.mcfunction
+
+Server now runs setup.mcfunction for every player. setup2 is skipped if
+
+setup already ran. Otherwise call setup2
+
+Enabled some config values.
+
+Timed events coming soon.
 
 
 v0.0.1-r01 12/11/2017 11:12:51PM
