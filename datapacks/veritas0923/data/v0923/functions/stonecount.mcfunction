@@ -1,4 +1,4 @@
-# .mcfunction Essentials v0.0.1-r03 12/12/2017 5:49:01AM
+# .mcfunction Essentials v0.0.1-r04 12/13/2017 12:20:34AM
 # Writtten by Nigel Todman (www.NigelTodman.com)
 #stone1 minecraft.mined:minecraft.stone
 #stone2 minecraft.mined:minecraft.andesite

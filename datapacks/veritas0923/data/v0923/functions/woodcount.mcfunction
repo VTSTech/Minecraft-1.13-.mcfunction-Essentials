@@ -1,4 +1,4 @@
-# .mcfunction Essentials v0.0.1-r03 12/12/2017 5:49:01AM
+# .mcfunction Essentials v0.0.1-r04 12/13/2017 12:20:34AM
 # Writtten by Nigel Todman (www.NigelTodman.com)
 #wood1 minecraft.mined:minecraft.acacia_log
 #wood2 minecraft.mined:minecraft.birch_log

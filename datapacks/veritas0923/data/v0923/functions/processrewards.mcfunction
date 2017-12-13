@@ -1,4 +1,3 @@
-# .mcfunction Essentials v0.0.1-r03 12/12/2017 5:49:01AM
 # Writtten by Nigel Todman (www.NigelTodman.com)
 #execute if score <target> <targetObjective> = <source> <sourceObjective>
 execute as @a[scores={killcounter=1..}] run scoreboard players add @s money 10

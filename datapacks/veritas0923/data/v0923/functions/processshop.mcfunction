@@ -1,4 +1,3 @@
-# .mcfunction Essentials v0.0.1-r03 12/12/2017 5:49:01AM
 # Writtten by Nigel Todman (www.NigelTodman.com)
 ## we are evaluated after triggers, but before triggers reset.
 ## if buy is >= 1, give player a quantity of item if they have a minimum amount of money.
