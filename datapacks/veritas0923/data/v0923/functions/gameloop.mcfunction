@@ -1,4 +1,4 @@
-# .mcfunction Essentials v0.0.1-r03 12/12/2017 5:49:01AM
+# .mcfunction Essentials v0.0.1-r04 12/13/2017 12:20:34AM
 # Writtten by Nigel Todman (www.NigelTodman.com)
 ## Are players in inOverworld?
 #scoreboard players set @a inOverworld 0
@@ -13,18 +13,22 @@ execute as @a[scores={loopcnt=50..}] run function v0923:setup
 scoreboard objectives setdisplay sidebar totalkills
 ## trigger events
 execute as @a[scores={spawn=1..}] run tp @s -167 72 256
+execute as @a[scores={sethome=1..}] run function v0923:sethome
+execute as @a[scores={home=1..}] run function v0923:home
 execute as @a[scores={rtp=1..}] run spreadplayers 0 30000 50000 30000 true @s
 execute as @a[scores={getshopbook=1..}] run function v0923:shopbook
 execute as @a[scores={getwarpbook=1..}] run function v0923:warpbook
 ## Players have exited the store. Reset the check for the next purchase
 execute as @a[scores={buy=1..},scores={buycheck=1..}] run scoreboard players set @s buycheck 0
 ## reset triggers
-execute as @a[scores={spawn=1..}] run scoreboard players set @s spawn 0
-execute as @a[scores={rtp=1..}] run scoreboard players set @s rtp 0
-execute as @a[scores={buy=1..}] run scoreboard players set @s buy 0
-execute as @a[scores={buycheck=1..}] run scoreboard players set @s buycheck 0
-execute as @a[scores={getshopbook=1..}] run scoreboard players set @s getshopbook 0
-execute as @a[scores={getwarpbook=1..}] run scoreboard players set @s getwarpbook 0
+execute as @a[scores={spawn=1..},scores={loopcnt=50..}] run scoreboard players set @s spawn 0
+execute as @a[scores={sethome=1..}] run scoreboard players set @s sethome 0
+execute as @a[scores={home=1..}] run scoreboard players set @s home 0
+execute as @a[scores={rtp=1..},scores={loopcnt=50..}] run scoreboard players set @s rtp 0
+execute as @a[scores={buy=1..},scores={loopcnt=50..}] run scoreboard players set @s buy 0
+execute as @a[scores={buycheck=1..},scores={loopcnt=50..}] run scoreboard players set @s buycheck 0
+execute as @a[scores={getshopbook=1..},scores={loopcnt=50..}] run scoreboard players set @s getshopbook 0
+execute as @a[scores={getwarpbook=1..},scores={loopcnt=50..}] run scoreboard players set @s getwarpbook 0
 ### timed events
 #scoreboard players operation @s timediff = @s timecheck
 #scoreboard players operation @s timediff -= @s timeonline
@@ -38,7 +42,9 @@ execute as @a[scores={loopcnt=50..}] store result score @s coords_z run data get
 execute as @a[scores={loopcnt=50..}] run function v0923:processrewards
 ## Process Shop
 execute as @a[scores={loopcnt=50..}] run function v0923:processshop
+execute as @a[scores={loopcnt=50..}] run scoreboard players enable @s home
 ### if tick count is greater than 500, do these things...
+execute as @a[scores={loopcnt=500..}] run scoreboard players enable @s sethome
 execute as @a[scores={loopcnt=500..}] run scoreboard players enable @s spawn
 execute as @a[scores={loopcnt=500..}] run scoreboard players enable @s rtp
 execute as @a[scores={loopcnt=500..}] run scoreboard players enable @s buy
