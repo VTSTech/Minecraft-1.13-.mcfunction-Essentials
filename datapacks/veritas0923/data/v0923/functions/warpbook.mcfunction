@@ -1,3 +1,3 @@
 # .mcfunction Essentials v0.0.1-r04 12/13/2017 12:20:34AM
 # Writtten by Nigel Todman (www.NigelTodman.com)
-give @s minecraft:written_book{title:"Essentials Warp",author:"",pages:["{text:\"Warps: \\n\\n\",color:dark_gray,extra:[{text:\"Spawn \",clickEvent:{action:run_command,value:\"/trigger spawn\"}},{text:\"\\n\\nRandom TP \",clickEvent:{action:run_command,value:\"/trigger rtp\"}}]}"]} 1
+give @s minecraft:written_book{title:"Essentials Warp r04",author:"",pages:["{text:\"Warps: \\n\\n\",color:dark_gray,extra:[{text:\"Home \",clickEvent:{action:run_command,value:\"/trigger home\"}},{text:\"\\n\\nSpawn \",clickEvent:{action:run_command,value:\"/trigger spawn\"}},{text:\"\\n\\nRandom TP \",clickEvent:{action:run_command,value:\"/trigger rtp\"}}]}"]} 1
