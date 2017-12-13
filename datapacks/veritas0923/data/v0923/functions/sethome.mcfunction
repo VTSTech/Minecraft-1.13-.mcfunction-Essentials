@@ -1,4 +1,4 @@
-# .mcfunction Essentials v0.0.1-r04 12/13/2017 12:20:34AM
+# .mcfunction Essentials v0.0.1-r05 12/13/2017 7:10:46AM
 # Writtten by Nigel Todman (www.NigelTodman.com)
 #say sethome fired!
 scoreboard players set @s sethome 1

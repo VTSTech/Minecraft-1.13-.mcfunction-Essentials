@@ -1,4 +1,4 @@
-# .mcfunction Essentials v0.0.1-r04 12/13/2017 12:20:34AM
+# .mcfunction Essentials v0.0.1-r05 12/13/2017 7:10:46AM
 # Writtten by Nigel Todman (www.NigelTodman.com)
 #
 # Init config variables
@@ -19,7 +19,7 @@ scoreboard players set @a usebasicincome 1
 scoreboard players set @a useplayerhead 1
 # End_Config
 # Setup Triggers
-tell @s Initializing .mcfunction Essentials v0.0.1-r04 setup...
+tell @s Initializing .mcfunction Essentials v0.0.1-r05 setup...
 tell @s Adding triggers...
 scoreboard objectives add spawn trigger
 scoreboard objectives add rtp trigger
@@ -137,4 +137,4 @@ scoreboard objectives setdisplay list money
 execute as @s[scores={freeshulkerbox=1},scores={setupinit=1}] run give @s minecraft:lime_shulker_box
 # Distributing Basic Income
 execute as @s[scores={usebasicincome=1},scores={setupinit=1}] run scoreboard players operation @s money = @s basicincomeamt
-tell @s .mcfunction Essentials v0.0.1-r04 Setup Complete!
+tell @s .mcfunction Essentials v0.0.1-r05 Setup Complete!
