@@ -1,4 +1,4 @@
-# .mcfunction Essentials v0.0.1-r07 12/14/2017 4:00:50AM
+# .mcfunction Essentials v0.0.1-r08 12/14/2017 8:51:30AM
 # Writtten by Nigel Todman (www.NigelTodman.com)
 ##increment tick count,loopcnt resets, tickcount is global. never resets.
 scoreboard players add @a loopcnt 1
@@ -19,11 +19,13 @@ execute as @a store result score @s coords_x run data get entity @s Pos[0]
 execute as @a store result score @s coords_y run data get entity @s Pos[1]
 execute as @a store result score @s coords_z run data get entity @s Pos[2]
 #Update Action Bar
-execute if entity @a[scores={coords_y=1..}] run title @a actionbar [{"text":" "},{"text":"Elevation ","color":"dark_aqua"},{"score":{"name":"*","objective":"coords_y"}},{"text":" $","color":"yellow"},{"score":{"name":"*","objective":"money"}}]
+execute as @a run title @s actionbar [{"text":" "},{"text":"Elevation ","color":"green"},{"score":{"name":"*","objective":"coords_y"}},{"text":" $","color":"yellow"},{"score":{"name":"*","objective":"money"}},{"text":" Rank ","color":"green"},{"score":{"name":"*","objective":"rank"}},{"text":" AP ","color":"green"},{"score":{"name":"*","objective":"ap"}},{"text":"/","color":"dark_aqua"},{"score":{"name":"*","objective":"aptarget"}}]
 ## Process Rewards
 execute as @a[scores={loopcnt=50..}] run function v0923:processrewards
 ## Process Shop
 execute as @a[scores={loopcnt=50..}] run function v0923:processshop
+## Check AP & Rankup
+execute as @a if score @s ap >= @s aptarget run function v0923:rankup
 ## Reset Triggers
 execute as @a run function v0923:resettriggers
 ### if tick count is greater than 500, do these things...

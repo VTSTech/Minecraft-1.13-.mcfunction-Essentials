@@ -1,4 +1,4 @@
-# .mcfunction Essentials v0.0.1-r07 12/14/2017 4:00:50AM
+# .mcfunction Essentials v0.0.1-r08 12/14/2017 8:51:30AM
 # Writtten by Nigel Todman (www.NigelTodman.com)
 #tree1 minecraft.used:minecraft.acacia_sapling
 #tree2 minecraft.used:minecraft.birch_sapling
@@ -13,6 +13,7 @@ execute as @a[scores={tree4=1..}] run scoreboard players add @s treecounter 1
 execute as @a[scores={tree5=1..}] run scoreboard players add @s treecounter 1
 execute as @a[scores={tree6=1..}] run scoreboard players add @s treecounter 1
 execute as @a[scores={treecounter=1..}] run scoreboard players add @s money 2
+execute as @a[scores={treecounter=1..}] run scoreboard players add @s ap 1
 scoreboard players set @a treecounter 0
 scoreboard players set @a tree1 0
 scoreboard players set @a tree2 0

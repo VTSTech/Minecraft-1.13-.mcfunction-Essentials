@@ -1,4 +1,4 @@
-# .mcfunction Essentials v0.0.1-r07 12/14/2017 4:00:50AM
+# .mcfunction Essentials v0.0.1-r08 12/14/2017 8:51:30AM
 # Writtten by Nigel Todman (www.NigelTodman.com)
 #farm1 minecraft.used:minecraft.wheat_seeds
 #farm2 minecraft.used:minecraft.pumpkin_seeds
@@ -17,6 +17,7 @@ execute as @a[scores={farm6=1..}] run scoreboard players add @s farmcounter 1
 execute as @a[scores={farm7=1..}] run scoreboard players add @s farmcounter 1
 execute as @a[scores={farm8=1..}] run scoreboard players add @s farmcounter 1
 execute as @a[scores={farmcounter=1..}] run scoreboard players add @s money 4
+execute as @a[scores={farmcounter=1..}] run scoreboard players add @s ap 1
 scoreboard players set @a farmcounter 0
 scoreboard players set @a farm1 0
 scoreboard players set @a farm2 0

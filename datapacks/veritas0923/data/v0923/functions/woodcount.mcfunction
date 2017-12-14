@@ -1,4 +1,4 @@
-# .mcfunction Essentials v0.0.1-r07 12/14/2017 4:00:50AM
+# .mcfunction Essentials v0.0.1-r08 12/14/2017 8:51:30AM
 # Writtten by Nigel Todman (www.NigelTodman.com)
 #wood1 minecraft.mined:minecraft.acacia_log
 #wood2 minecraft.mined:minecraft.birch_log
@@ -13,6 +13,7 @@ execute as @a[scores={wood4=1..}] run scoreboard players add @s woodcounter 1
 execute as @a[scores={wood5=1..}] run scoreboard players add @s woodcounter 1
 execute as @a[scores={wood6=1..}] run scoreboard players add @s woodcounter 1
 execute as @a[scores={woodcounter=1..}] run scoreboard players add @s money 5
+execute as @a[scores={woodcounter=1..}] run scoreboard players add @s ap 1
 scoreboard players set @a woodcounter 0
 scoreboard players set @a wood1 0
 scoreboard players set @a wood2 0

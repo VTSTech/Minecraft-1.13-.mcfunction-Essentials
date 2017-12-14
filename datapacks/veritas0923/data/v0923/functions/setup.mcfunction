@@ -1,4 +1,4 @@
-# .mcfunction Essentials v0.0.1-r07 12/14/2017 4:00:50AM
+# .mcfunction Essentials v0.0.1-r08 12/14/2017 8:51:30AM
 # Writtten by Nigel Todman (www.NigelTodman.com)
 #
 # Init config variables
@@ -19,7 +19,7 @@ scoreboard players set @a usebasicincome 1
 scoreboard players set @a useplayerhead 1
 # End_Config
 # Setup Triggers
-tell @s Initializing .mcfunction Essentials v0.0.1-r07 setup...
+tell @s Initializing .mcfunction Essentials v0.0.1-r08 setup...
 tell @s Adding triggers...
 scoreboard objectives add spawn trigger
 scoreboard objectives add rtp trigger
@@ -89,6 +89,8 @@ scoreboard players set @a neg6thousand -6000
 scoreboard objectives add rnd dummy
 scoreboard objectives add totalkills totalKillCount Kills
 scoreboard objectives add hp health
+scoreboard objectives add ap dummy
+scoreboard objectives add aptarget dummy
 # Setup Counters
 tell @s Adding counter variables...
 scoreboard objectives add killcounter totalKillCount
@@ -161,9 +163,13 @@ scoreboard objectives add timediff dummy
 # Setup Scoreboard Display
 tell @s Initializing Scoreboard Display...
 scoreboard objectives setdisplay sidebar money
-scoreboard objectives setdisplay list totalkills
+scoreboard objectives setdisplay list rank
 # Giving away free stuff per config
 execute as @s[scores={freeshulkerbox=1},scores={setupinit=1}] run give @s minecraft:lime_shulker_box
 # Distributing Basic Income
 execute as @s[scores={usebasicincome=1},scores={setupinit=1}] run scoreboard players operation @s money = @s basicincomeamt
-tell @s .mcfunction Essentials v0.0.1-r07 Setup Complete!
+tell @s .mcfunction Essentials v0.0.1-r08 Setup Complete!
+# Setup should only be called once by player. Set starting Rank to 1, AP to 0
+scoreboard players set @s rank 1
+scoreboard players set @s ap 0
+scoreboard players set @s aptarget 300
