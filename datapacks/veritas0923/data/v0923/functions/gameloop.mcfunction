@@ -1,4 +1,4 @@
-# .mcfunction Essentials v0.0.1-r05 12/13/2017 7:10:46AM
+# .mcfunction Essentials v0.0.1-r06 12/13/2017 9:07:01PM
 # Writtten by Nigel Todman (www.NigelTodman.com)
 ## Are players in inOverworld?
 #scoreboard players set @a inOverworld 0
@@ -10,9 +10,14 @@ scoreboard players add @a tickcount 1
 ## Have players run setup?
 execute as @a[scores={loopcnt=50..}] run function v0923:setup
 ## display sidebar
-scoreboard objectives setdisplay sidebar totalkills
+scoreboard objectives setdisplay sidebar money
 ## trigger events
+## World Specific Coords Start
+#World Spawn Warp
 execute as @a[scores={spawn=1..}] run tp @s -167 72 256
+#Village Warp #1
+execute as @a[scores={village1=1..}] run tp @s -13148 69 6789
+## World Specific Coords End
 execute as @a[scores={sethome=1..}] run function v0923:sethome
 #execute as @a[scores={home=1..}] run function v0923:home
 execute as @e[name=home] run function v0923:home
@@ -29,16 +34,17 @@ execute as @a store result score @s coords_x run data get entity @s Pos[0]
 execute as @a store result score @s coords_y run data get entity @s Pos[1]
 execute as @a store result score @s coords_z run data get entity @s Pos[2]
 ## Process Rewards
-execute as @a run function v0923:processrewards
+execute as @a[scores={loopcnt=50..}] run function v0923:processrewards
 ## Process Shop
-execute as @a run function v0923:processshop
+execute as @a[scores={loopcnt=50..}] run function v0923:processshop
 ## Players have exited the store. Reset the check for the next purchase
 execute as @a[scores={buy=1..},scores={buycheck=1..}] run scoreboard players set @s buycheck 0
 execute as @a[scores={loopcnt=50..}] run scoreboard players enable @s home
 ## reset triggers
 execute as @a[scores={spawn=1..},scores={loopcnt=50..}] run scoreboard players set @s spawn 0
+execute as @a[scores={village1=1..},scores={loopcnt=50..}] run scoreboard players set @s village1 0
 execute as @a[scores={sethome=1..}] run scoreboard players set @s sethome 0
-execute as @a[scores={home=1..},scores={loopcnt=50..}] run scoreboard players set @s home 0
+execute as @a[scores={home=1..}] run scoreboard players set @s home 0
 execute as @a[scores={rtp=1..}] run scoreboard players set @s rtp 0
 execute as @a[scores={buy=1..}] run scoreboard players set @s buy 0
 execute as @a[scores={buycheck=1..}] run scoreboard players set @s buycheck 0
@@ -55,5 +61,6 @@ execute as @a[scores={loopcnt=500..}] run scoreboard players enable @s spawn
 execute as @a[scores={loopcnt=500..}] run scoreboard players enable @s rtp
 execute as @a[scores={loopcnt=500..}] run scoreboard players enable @s sell
 execute as @a[scores={loopcnt=500..}] run scoreboard players enable @s rankup
+execute as @a[scores={loopcnt=500..}] run scoreboard players enable @s village1
 ### if tick count is greater than 501, reset it
 execute as @a[scores={loopcnt=501..}] run scoreboard players set @s loopcnt 0

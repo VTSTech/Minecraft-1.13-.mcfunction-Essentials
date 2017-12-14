@@ -1,4 +1,4 @@
-# .mcfunction Essentials v0.0.1-r05 12/13/2017 7:10:46AM
+# .mcfunction Essentials v0.0.1-r06 12/13/2017 9:07:01PM
 # Writtten by Nigel Todman (www.NigelTodman.com)
 ## we are evaluated after triggers, but before triggers reset.
 ## if buy is >= 1, give player a quantity of item if they have a minimum amount of money.
@@ -26,3 +26,7 @@ execute as @a[scores={buycheck=1},scores={buy=4}] run give @s minecraft:iron_ing
 execute as @a[scores={buy=5}] run execute as @s[scores={money=60..}] run scoreboard players set @s buycheck 1
 execute as @a[scores={buycheck=1},scores={buy=5}] run scoreboard players operation @s money -= @s sixty
 execute as @a[scores={buycheck=1},scores={buy=5}] run give @s minecraft:gold_ingot 1
+## Buy 1 minecraft:redstone for 50
+execute as @a[scores={buy=6}] run execute as @s[scores={money=50..}] run scoreboard players set @s buycheck 1
+execute as @a[scores={buycheck=1},scores={buy=6}] run scoreboard players operation @s money -= @s fifty
+execute as @a[scores={buycheck=1},scores={buy=6}] run give @s minecraft:redstone 1

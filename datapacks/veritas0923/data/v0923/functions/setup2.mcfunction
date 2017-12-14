@@ -1,4 +1,4 @@
-# .mcfunction Essentials v0.0.1-r05 12/13/2017 7:10:46AM
+# .mcfunction Essentials v0.0.1-r06 12/13/2017 9:07:01PM
 # Writtten by Nigel Todman (www.NigelTodman.com)
 #
 # Init config variables
@@ -19,7 +19,7 @@ scoreboard players set @a usebasicincome 1
 scoreboard players set @a useplayerhead 1
 # End_Config
 # Setup Triggers
-tell @s Initializing .mcfunction Essentials v0.0.1-r05 setup...
+tell @s Initializing .mcfunction Essentials v0.0.1-r06 setup...
 tell @s Adding triggers...
 scoreboard objectives add spawn trigger
 scoreboard objectives add rtp trigger
@@ -31,6 +31,8 @@ scoreboard objectives add getshopbook trigger
 scoreboard objectives add getwarpbook trigger
 scoreboard objectives add sethome trigger
 scoreboard objectives add home trigger
+## Custom warps here
+scoreboard objectives add village1 trigger
 # Setup player/scoreboard vars
 tell @s Adding logic variables...
 scoreboard objectives add coords_x dummy
@@ -57,6 +59,7 @@ scoreboard objectives add eight dummy
 scoreboard objectives add nine dummy
 scoreboard objectives add ten dummy
 scoreboard objectives add thirty dummy
+scoreboard objectives add fifty dummy
 scoreboard objectives add sixty dummy
 scoreboard objectives add hundred dummy
 scoreboard objectives add thousand dummy
@@ -74,6 +77,7 @@ scoreboard players set @a eight 8
 scoreboard players set @a nine 9
 scoreboard players set @a ten 10
 scoreboard players set @a thirty 30
+scoreboard players set @a fifty 50
 scoreboard players set @a sixty 60
 scoreboard players set @a hundred 100
 scoreboard players set @a thousand 1000
@@ -104,37 +108,59 @@ scoreboard objectives add tree3 minecraft.used:minecraft.dark_oak_sapling
 scoreboard objectives add tree4 minecraft.used:minecraft.jungle_sapling
 scoreboard objectives add tree5 minecraft.used:minecraft.oak_sapling
 scoreboard objectives add tree6 minecraft.used:minecraft.spruce_sapling
+scoreboard objectives add farmcounter dummy
+scoreboard objectives add farm1 minecraft.used:minecraft.wheat_seeds
+scoreboard objectives add farm2 minecraft.used:minecraft.pumpkin_seeds
+scoreboard objectives add farm3 minecraft.used:minecraft.beetroot_seeds
+scoreboard objectives add farm4 minecraft.used:minecraft.carrot
+scoreboard objectives add farm5 minecraft.used:minecraft.potato
+scoreboard objectives add farm6 minecraft.used:minecraft.cocoa_beans
+scoreboard objectives add farm7 minecraft.used:minecraft.melon_seeds
+scoreboard objectives add farm8 minecraft.used:minecraft.sugar_cane
+scoreboard objectives add harvestcounter dummy
+scoreboard objectives add harvest1 minecraft.mined:minecraft.wheat
+scoreboard objectives add harvest2 minecraft.mined:minecraft.pumpkin
+scoreboard objectives add harvest3 minecraft.mined:minecraft.beetroots
+scoreboard objectives add harvest4 minecraft.mined:minecraft.carrots
+scoreboard objectives add harvest5 minecraft.mined:minecraft.potatoes
+scoreboard objectives add harvest6 minecraft.mined:minecraft.cocoa
+scoreboard objectives add harvest7 minecraft.mined:minecraft.melon_block
+scoreboard objectives add harvest8 minecraft.mined:minecraft.sugar_cane
 scoreboard objectives add coalcounter minecraft.mined:minecraft.coal_ore
 scoreboard objectives add ironcounter minecraft.mined:minecraft.iron_ore
 scoreboard objectives add goldcounter minecraft.mined:minecraft.gold_ore
 scoreboard objectives add redstonecounter minecraft.mined:minecraft.redstone_ore
 scoreboard objectives add diamondcounter minecraft.mined:minecraft.diamond_ore
+scoreboard objectives add lapiscounter minecraft.mined:minecraft.lapis_ore
 scoreboard objectives add coal minecraft.mined:minecraft.coal_ore
 scoreboard objectives add iron minecraft.mined:minecraft.iron_ore
 scoreboard objectives add gold minecraft.mined:minecraft.gold_ore
 scoreboard objectives add redstone minecraft.mined:minecraft.redstone_ore
 scoreboard objectives add diamond minecraft.mined:minecraft.diamond_ore
+scoreboard objectives add lapis minecraft.mined:minecraft.lapis_ore
 scoreboard objectives add rank dummy Rank
 scoreboard objectives add money dummy Money
 scoreboard players set @a killcounter 0
 scoreboard players set @a woodcounter 0
 scoreboard players set @a treecounter 0
 scoreboard players set @a stonecounter 0
+scoreboard players set @a farmcounter 0
 scoreboard players set @a coalcounter 0
 scoreboard players set @a ironcounter 0
 scoreboard players set @a goldcounter 0
 scoreboard players set @a redstonecounter 0
 scoreboard players set @a diamondcounter 0
+scoreboard players set @a lapiscounter 0
 # Player Online Time Counter
 scoreboard objectives add timeonline minecraft.custom:minecraft.play_one_minute
 scoreboard objectives add timecheck dummy
 scoreboard objectives add timediff dummy
 # Setup Scoreboard Display
 tell @s Initializing Scoreboard Display...
-scoreboard objectives setdisplay sidebar totalkills
-scoreboard objectives setdisplay list money
+scoreboard objectives setdisplay sidebar money
+scoreboard objectives setdisplay list totalkills
 # Giving away free stuff per config
 execute as @s[scores={freeshulkerbox=1},scores={setupinit=1}] run give @s minecraft:lime_shulker_box
 # Distributing Basic Income
 execute as @s[scores={usebasicincome=1},scores={setupinit=1}] run scoreboard players operation @s money = @s basicincomeamt
-tell @s .mcfunction Essentials v0.0.1-r05 Setup Complete!
+tell @s .mcfunction Essentials v0.0.1-r06 Setup Complete!
