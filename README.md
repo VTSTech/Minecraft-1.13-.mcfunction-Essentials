@@ -13,13 +13,20 @@
 Config:
 
 Line 6 of triggers.mcfunction, Specify your world spawn coords after the line 
+
 World Specific Coords Start
 
+
 Lines 17/18 of setup.mcfunction
+
 Start_Config
+
 Set to 0 to disable the following options
+
 scoreboard players set @a basicincomeamt 1200
+
 scoreboard players set @a freeshulkerbox 1
+
 scoreboard players set @a usebasicincome 1
 
 
