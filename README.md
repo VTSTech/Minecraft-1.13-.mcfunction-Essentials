@@ -4,8 +4,13 @@
 
 # Development Server: MC.NIGELTODMAN.COM
 
-Config:
+<img src="https://i.gyazo.com/bafaee4b37dcadae9ee3e12b9fdde1c4.png">
 
+<img src="https://i.gyazo.com/7f83bba4c72d5bfc404a4ce8d56d17a6.jpg">
+
+<img src="https://i.gyazo.com/bfae930a996d50b94a286dc6634ac7c5.jpg">
+
+Config:
 
 Line 15 of gameloop.mcfunction, Specify your world spawn coords after the line 
 World Specific Coords Start
@@ -25,7 +30,7 @@ Copy the contents of /datapacks/ into your own /datapacks/ folder
 
 /reload or restart your server.
 
-Run /function v0923:setup
+Run /function v0923:setup2
 
 That's it.
 
