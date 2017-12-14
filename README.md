@@ -1,18 +1,18 @@
-Minecraft 1.13 .mcfunction Essentials v0.0.1-r06
+# Minecraft 1.13 .mcfunction Essentials v0.0.1-r06
 
-Written by Nigel Todman (www.NigelTodman.com)
+# Written by Nigel Todman (www.NigelTodman.com)
 
-Development Server: MC.NIGELTODMAN.COM
+# Development Server: MC.NIGELTODMAN.COM
 
 Config:
 
 
 Line 15 of gameloop.mcfunction, Specify your world spawn coords after the line 
-## World Specific Coords Start
+World Specific Coords Start
 
 Lines 17/18 of setup2.mcfunction
-# Start_Config
-# Set to 0 to disable the following options
+Start_Config
+Set to 0 to disable the following options
 scoreboard players set @a basicincomeamt 1200
 scoreboard players set @a freeshulkerbox 1
 scoreboard players set @a usebasicincome 1
