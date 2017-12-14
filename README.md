@@ -1,4 +1,4 @@
-# Minecraft 1.13 .mcfunction Essentials v0.0.1-r06
+# Minecraft 1.13 .mcfunction Essentials v0.0.1-r07
 
 # Written by Nigel Todman (www.NigelTodman.com)
 
@@ -8,14 +8,14 @@
 
 <img src="https://i.gyazo.com/7f83bba4c72d5bfc404a4ce8d56d17a6.jpg">
 
-<img src="https://i.gyazo.com/bfae930a996d50b94a286dc6634ac7c5.jpg">
+<img src="https://i.gyazo.com/64a79ca9e2e52b87898ce295e0ba1ba9.jpg">
 
 Config:
 
-Line 15 of gameloop.mcfunction, Specify your world spawn coords after the line 
+Line 6 of triggers.mcfunction, Specify your world spawn coords after the line 
 World Specific Coords Start
 
-Lines 17/18 of setup2.mcfunction
+Lines 17/18 of setup.mcfunction
 Start_Config
 Set to 0 to disable the following options
 scoreboard players set @a basicincomeamt 1200
@@ -30,9 +30,10 @@ Copy the contents of /datapacks/ into your own /datapacks/ folder
 
 /reload or restart your server.
 
-Run /function v0923:setup2
+Run /function v0923:setup
 
 That's it.
+
 
 Notes:
 
@@ -41,7 +42,34 @@ Players can obtain a Warp Book with /trigger getwarpbook
 
 Players can obtain a Shop Book with /trigger getshopbook
 
+Players can enable All Player Balances with /trigger sidebar
+
+Disable with /trigger sidebar set 2
+
+
 Changelog:
+
+
+v0.0.1-r07 12/14/2017 4:00:50AM
+
+Cleaned up gameloop.mcfunction
+
+Added triggers.mcfunction
+
+Added resettriggers.mcfunction
+
+Swapped filenames setup and setup2.
+
+Removed sidebar completely in favor of 'actionbar'
+
+Action Bar now displays elevation (y coord) and character balance.
+
+Players can toggle sidebar with /trigger sidebar set 2 (2=off, 1=on)
+
+Added XP Bottle to shop $100
+
+Added Enchanting Table to shop $2000
+
 
 v0.0.1-r06 12/13/2017 9:07:01PM
 
@@ -73,6 +101,7 @@ Conditional Bug: If you travel too far away from your 'home' - The marker (entit
 v0.0.1-r05 12/13/2017 7:10:46AM
 
 Improved home teleport logic
+
 
 v0.0.1-r04 12/13/2017 12:20:34AM
 

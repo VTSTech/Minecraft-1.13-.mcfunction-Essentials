@@ -1,4 +1,4 @@
-# .mcfunction Essentials v0.0.1-r06 12/13/2017 9:07:01PM
+# .mcfunction Essentials v0.0.1-r07 12/14/2017 4:00:50AM
 # Writtten by Nigel Todman (www.NigelTodman.com)
 ## we are evaluated after triggers, but before triggers reset.
 ## if buy is >= 1, give player a quantity of item if they have a minimum amount of money.
@@ -30,3 +30,17 @@ execute as @a[scores={buycheck=1},scores={buy=5}] run give @s minecraft:gold_ing
 execute as @a[scores={buy=6}] run execute as @s[scores={money=50..}] run scoreboard players set @s buycheck 1
 execute as @a[scores={buycheck=1},scores={buy=6}] run scoreboard players operation @s money -= @s fifty
 execute as @a[scores={buycheck=1},scores={buy=6}] run give @s minecraft:redstone 1
+## Buy 1 minecraft:experience_bottle for 100
+execute as @a[scores={buy=7}] run execute as @s[scores={money=100..}] run scoreboard players set @s buycheck 1
+execute as @a[scores={buycheck=1},scores={buy=7}] run scoreboard players operation @s money -= @s hundred
+execute as @a[scores={buycheck=1},scores={buy=7}] run give @s minecraft:experience_bottle 1
+## Buy 1 minecraft:enchanting_table for 2000
+execute as @a[scores={buy=8}] run execute as @s[scores={money=2000..}] run scoreboard players set @s buycheck 1
+execute as @a[scores={buycheck=1},scores={buy=8}] run scoreboard players operation @s money -= @s 2thousand
+execute as @a[scores={buycheck=1},scores={buy=8}] run give @s minecraft:enchanting_table 1
+## Shopping Complete, Players have exited the store. Reset the check for the next purchase
+execute as @a[scores={buy=1..},scores={buycheck=1..}] run scoreboard players set @s buycheck 0
+#likely upcoming shop inventory
+#minecraft:firework_rocket
+#minecraft:firework_star
+#minecraft:flower_pot
