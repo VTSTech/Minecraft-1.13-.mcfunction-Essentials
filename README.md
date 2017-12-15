@@ -1,14 +1,14 @@
-# Minecraft 1.13 .mcfunction Essentials v0.0.1-r07
+# Minecraft 1.13 .mcfunction Essentials v0.0.2-r10
 
 # Written by Nigel Todman (www.NigelTodman.com)
 
 # Development Server: MC.NIGELTODMAN.COM
 
-<img src="https://i.gyazo.com/bafaee4b37dcadae9ee3e12b9fdde1c4.png">
+<img src="https://i.gyazo.com/8ae494fb3352cec686b0f50ca201ba84.png">
 
-<img src="https://i.gyazo.com/7f83bba4c72d5bfc404a4ce8d56d17a6.jpg">
+<img src="https://i.gyazo.com/0b3c2d7f458f4bcec7ca1074069233ba.jpg">
 
-<img src="https://i.gyazo.com/64a79ca9e2e52b87898ce295e0ba1ba9.jpg">
+<img src="https://i.gyazo.com/67145e4ba2e8e42ede5651da71117d39.jpg">
 
 Config:
 
@@ -55,6 +55,51 @@ Disable with /trigger sidebar set 2
 
 
 Changelog:
+
+
+v0.0.2-r10 12/15/2017 8:33:49AM
+
+Added rewards (AP/$) for harvesting planting red/brown mushrooms
+
+Added rewards (AP/$) for harvesting pumpkins
+
+Added Compass and Bed to shop
+
+Made setup.mcfunction less verbose.
+
+setup.mcfunction now displays trigger instructions instead.
+
+
+v0.0.1-r09 12/14/2017 8:08:10PM
+
+Fixed initial setup logic for new players
+
+Sets scoreboard objective ‘one’ to 1 every tick.
+
+Compares setupinit to one. If setupinit not at least one. setup
+
+All values are 0 for new players. until 1 tick and one is set.
+
+
+v0.0.1-r08 12/14/2017 8:51:30AM
+
+Rank and AP system working.
+
+Regular XP/Level is depleted via various game mechanisms…
+
+But your Rank will never decrease 
+
+AP is awarded for various tasks. Killing, Planting, Mining, etc
+
+AP for Rank 2 is 300. Doubles every Rank.
+
+Added rankup.mcfunction
+
+Added Rank, AP and AP req to Rank Up to action bar
+
+Tab List now displays Rank
+
+Added placeholders to Shop. Added Shop Page 2
 
 
 v0.0.1-r07 12/14/2017 4:00:50AM
