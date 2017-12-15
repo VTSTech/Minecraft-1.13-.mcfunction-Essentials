@@ -1,4 +1,4 @@
-# .mcfunction Essentials v0.0.1-r08 12/12/2017 8:07:46PM
+# .mcfunction Essentials v0.0.1-r09 12/12/2017 8:07:46PM
 # Writtten by Nigel Todman (www.NigelTodman.com)
 #scoreboard players set @s home 1
 #say home fired!

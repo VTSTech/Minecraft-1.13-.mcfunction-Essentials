@@ -1,12 +1,13 @@
-# .mcfunction Essentials v0.0.1-r08 12/14/2017 8:51:30AM
+# .mcfunction Essentials v0.0.1-r09 12/14/2017 8:08:10PM
 # Writtten by Nigel Todman (www.NigelTodman.com)
 ##increment tick count,loopcnt resets, tickcount is global. never resets.
 scoreboard players add @a loopcnt 1
 scoreboard players add @a tickcount 1
+scoreboard players set @a one 1
 ## Have players run setup? Is this needed? Do players need to run setup?...
 ## Yes. To distribute Basic Income and to give a Free Shulker Box to the calling player.
 #setup2 only executes setup for character if it has never been done.
-execute as @a[scores={loopcnt=50..}] run function v0923:setup2
+execute as @a run function v0923:setup2
 ## Process Triggers
 execute as @a run function v0923:triggers
 ### timed events
