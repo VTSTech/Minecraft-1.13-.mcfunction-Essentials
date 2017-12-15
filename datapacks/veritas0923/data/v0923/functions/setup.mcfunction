@@ -1,4 +1,4 @@
-# .mcfunction Essentials v0.0.1-r09 12/14/2017 8:08:10PM
+# .mcfunction Essentials v0.0.2-r10 12/15/2017 8:33:49AM
 # Writtten by Nigel Todman (www.NigelTodman.com)
 #
 # Init config variables
@@ -19,8 +19,10 @@ scoreboard players set @a usebasicincome 1
 scoreboard players set @a useplayerhead 1
 # End_Config
 # Setup Triggers
-tell @s Initializing .mcfunction Essentials v0.0.1-r09 setup...
-tell @s Adding triggers...
+#tell @s Initializing .mcfunction Essentials v0.0.1-r10 setup...
+#MOTD Here
+tell @s Welcome to MC.NIGELTODMAN.COM - Get a Warp Book with /trigger getwarpbook, Shop Book with /trigger getshopbook
+#tell @s Adding triggers...
 scoreboard objectives add spawn trigger
 scoreboard objectives add rtp trigger
 scoreboard objectives add buy trigger
@@ -35,7 +37,7 @@ scoreboard objectives add sidebar trigger
 ## Custom warps here
 scoreboard objectives add village1 trigger
 # Setup player/scoreboard vars
-tell @s Adding logic variables...
+#tell @s Adding logic variables...
 scoreboard objectives add coords_x dummy
 scoreboard objectives add coords_y dummy
 scoreboard objectives add coords_z dummy
@@ -63,6 +65,8 @@ scoreboard objectives add thirty dummy
 scoreboard objectives add fifty dummy
 scoreboard objectives add sixty dummy
 scoreboard objectives add hundred dummy
+scoreboard objectives add hundredfifty dummy
+scoreboard objectives add 2hundred dummy
 scoreboard objectives add thousand dummy
 scoreboard objectives add 2thousand dummy
 scoreboard objectives add 5thousand dummy
@@ -82,6 +86,8 @@ scoreboard players set @a thirty 30
 scoreboard players set @a fifty 50
 scoreboard players set @a sixty 60
 scoreboard players set @a hundred 100
+scoreboard players set @a hundredfifty 150
+scoreboard players set @a 2hundred 200
 scoreboard players set @a thousand 1000
 scoreboard players set @a 2thousand 2000
 scoreboard players set @a 5thousand 5000
@@ -92,7 +98,7 @@ scoreboard objectives add hp health
 scoreboard objectives add ap dummy
 scoreboard objectives add aptarget dummy
 # Setup Counters
-tell @s Adding counter variables...
+#tell @s Adding counter variables...
 scoreboard objectives add killcounter totalKillCount
 scoreboard objectives add woodcounter dummy
 scoreboard objectives add wood1 minecraft.mined:minecraft.acacia_log
@@ -122,6 +128,8 @@ scoreboard objectives add farm5 minecraft.used:minecraft.potato
 scoreboard objectives add farm6 minecraft.used:minecraft.cocoa_beans
 scoreboard objectives add farm7 minecraft.used:minecraft.melon_seeds
 scoreboard objectives add farm8 minecraft.used:minecraft.sugar_cane
+scoreboard objectives add farm9 minecraft.used:minecraft.red_mushroom
+scoreboard objectives add farm10 minecraft.used:minecraft.brown_mushroom
 scoreboard objectives add harvestcounter dummy
 scoreboard objectives add harvest1 minecraft.mined:minecraft.wheat
 scoreboard objectives add harvest2 minecraft.mined:minecraft.pumpkin
@@ -131,6 +139,9 @@ scoreboard objectives add harvest5 minecraft.mined:minecraft.potatoes
 scoreboard objectives add harvest6 minecraft.mined:minecraft.cocoa
 scoreboard objectives add harvest7 minecraft.mined:minecraft.melon_block
 scoreboard objectives add harvest8 minecraft.mined:minecraft.sugar_cane
+scoreboard objectives add harvest9 minecraft.mined:minecraft.red_mushroom
+scoreboard objectives add harvest10 minecraft.mined:minecraft.brown_mushroom
+scoreboard objectives add harvest11 minecraft.mined:minecraft.pumpkin
 scoreboard objectives add coalcounter minecraft.mined:minecraft.coal_ore
 scoreboard objectives add ironcounter minecraft.mined:minecraft.iron_ore
 scoreboard objectives add goldcounter minecraft.mined:minecraft.gold_ore
@@ -161,14 +172,14 @@ scoreboard objectives add timeonline minecraft.custom:minecraft.play_one_minute
 scoreboard objectives add timecheck dummy
 scoreboard objectives add timediff dummy
 # Setup Scoreboard Display
-tell @s Initializing Scoreboard Display...
+#tell @s Initializing Scoreboard Display...
 scoreboard objectives setdisplay sidebar money
 scoreboard objectives setdisplay list rank
 # Giving away free stuff per config
 execute as @s[scores={freeshulkerbox=1},scores={setupinit=1}] run give @s minecraft:lime_shulker_box
 # Distributing Basic Income
 execute as @s[scores={usebasicincome=1},scores={setupinit=1}] run scoreboard players operation @s money = @s basicincomeamt
-tell @s .mcfunction Essentials v0.0.1-r09 Setup Complete!
+#tell @s .mcfunction Essentials v0.0.1-r10 Setup Complete!
 # Setup should only be called once by player. Set starting Rank to 1, AP to 0
 scoreboard players set @s rank 1
 scoreboard players set @s ap 0
