@@ -42,6 +42,7 @@ execute as @a[scores={buycheck=1},scores={buy=8}] run give @s minecraft:enchanti
 execute as @a[scores={buy=9}] run execute as @s[scores={money=150..}] run scoreboard players set @s buycheck 1
 execute as @a[scores={buycheck=1},scores={buy=9}] run scoreboard players operation @s money -= @s hundredfifty
 execute as @a[scores={buycheck=1},scores={buy=9}] run give @s minecraft:compass 1
+## Buy 1 minecraft:red_bed for 200
 execute as @a[scores={buy=10}] run execute as @s[scores={money=200..}] run scoreboard players set @s buycheck 1
 execute as @a[scores={buycheck=1},scores={buy=10}] run scoreboard players operation @s money -= @s 2hundred
 execute as @a[scores={buycheck=1},scores={buy=10}] run give @s minecraft:red_bed 1
