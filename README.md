@@ -1,4 +1,4 @@
-# Minecraft 1.13 .mcfunction Essentials v0.0.2-r10
+# Minecraft 1.13 .mcfunction Essentials v0.0.2-r11
 
 # Written by Nigel Todman (www.NigelTodman.com)
 
@@ -55,6 +55,12 @@ Disable with /trigger sidebar set 2
 
 
 Changelog:
+
+v0.0.2-r11 1/19/2018 4:24:02PM
+
+Sidebar display now defaults to off
+
+Added rewards (AP/$) for mining emerald ore
 
 
 v0.0.2-r10 12/15/2017 8:33:49AM
