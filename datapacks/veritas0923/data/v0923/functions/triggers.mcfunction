@@ -1,4 +1,4 @@
-# .mcfunction Essentials v0.0.2-r10 12/15/2017 8:33:49AM
+# .mcfunction Essentials v0.0.2-r11 1/19/2018 4:24:02PM
 # Writtten by Nigel Todman (www.NigelTodman.com)
 ## trigger events
 ## World Specific Coords Start
