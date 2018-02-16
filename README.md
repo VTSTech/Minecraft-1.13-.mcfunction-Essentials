@@ -1,4 +1,4 @@
-# Minecraft 1.13 .mcfunction Essentials v0.0.2-r11
+# Minecraft 1.13 .mcfunction Essentials v0.0.2-r12
 
 # Written by Nigel Todman (www.NigelTodman.com)
 
@@ -55,6 +55,19 @@ Disable with /trigger sidebar set 2
 
 
 Changelog:
+
+v0.0.1-r12 12/12/2017 8:07:46PM
+
+Updated entity selector syntax per latest snapshot
+
+CustomName NBT tag now using JSON
+
+Warp/Shop Book now given during setup.
+
+
+Development Server mc.nigeltodman.com using new seed. Testing new World
+Generator
+
 
 v0.0.2-r11 1/19/2018 4:24:02PM
 
