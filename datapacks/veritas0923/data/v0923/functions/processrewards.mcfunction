@@ -1,4 +1,4 @@
-# .mcfunction Essentials v0.0.2-r11 1/19/2018 4:24:02PM
+# .mcfunction Essentials v0.0.2-r12 2/16/2018 7:32:21AM
 # Writtten by Nigel Todman (www.NigelTodman.com)
 # v0923:killcount
 execute as @a[scores={killcounter=1..}] run scoreboard players add @s money 10

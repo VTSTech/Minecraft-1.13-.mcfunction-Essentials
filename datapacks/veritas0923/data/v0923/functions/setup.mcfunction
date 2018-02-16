@@ -1,4 +1,4 @@
-# .mcfunction Essentials v0.0.2-r11 1/19/2018 4:24:02PM
+# .mcfunction Essentials v0.0.2-r12 2/16/2018 7:32:21AM
 # Writtten by Nigel Todman (www.NigelTodman.com)
 #
 # Init config variables
@@ -19,7 +19,7 @@ scoreboard players set @a usebasicincome 1
 scoreboard players set @a useplayerhead 1
 # End_Config
 # Setup Triggers
-#tell @s Initializing .mcfunction Essentials v0.0.1-r11 setup...
+#tell @s Initializing .mcfunction Essentials v0.0.1-r12 setup...
 #MOTD Here
 tell @s Welcome to MC.NIGELTODMAN.COM - Get a Warp Book with /trigger getwarpbook, Shop Book with /trigger getshopbook
 #tell @s Adding triggers...
@@ -177,11 +177,13 @@ scoreboard objectives setdisplay sidebar money
 scoreboard objectives setdisplay list rank
 execute as @s run trigger sidebar set 2
 # Giving away free stuff per config
-execute as @s[scores={freeshulkerbox=1},scores={setupinit=1}] run give @s minecraft:lime_shulker_box
+execute as @s[scores={freeshulkerbox=1,setupinit=1}] run give @s minecraft:lime_shulker_box
 # Distributing Basic Income
-execute as @s[scores={usebasicincome=1},scores={setupinit=1}] run scoreboard players operation @s money = @s basicincomeamt
-#tell @s .mcfunction Essentials v0.0.1-r11 Setup Complete!
-# Setup should only be called once by player. Set starting Rank to 1, AP to 0
+execute as @s[scores={usebasicincome=1,setupinit=1}] run scoreboard players operation @s money = @s basicincomeamt
+#tell @s .mcfunction Essentials v0.0.1-r12 Setup Complete!
+# Setup should only be called once by player. Set starting Rank to 1, AP to 0, Give Warp/Shop Books
 scoreboard players set @s rank 1
 scoreboard players set @s ap 0
 scoreboard players set @s aptarget 300
+execute as @s run function v0923:warpbook
+execute as @s run function v0923:shopbook

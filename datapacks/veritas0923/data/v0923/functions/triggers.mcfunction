@@ -1,9 +1,9 @@
-# .mcfunction Essentials v0.0.2-r11 1/19/2018 4:24:02PM
+# .mcfunction Essentials v0.0.2-r12 2/16/2018 7:32:21AM
 # Writtten by Nigel Todman (www.NigelTodman.com)
 ## trigger events
 ## World Specific Coords Start
 #World Spawn Warp
-execute as @a[scores={spawn=1..}] run tp @s -167 72 256
+execute as @a[scores={spawn=1..}] run tp @s -550 66 -117
 #Village Warp #1
 execute as @a[scores={village1=1..}] run tp @s -13148 69 6789
 ## World Specific Coords End

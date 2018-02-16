@@ -1,8 +1,8 @@
-# .mcfunction Essentials v0.0.2-r11 1/19/2018 4:24:02PM
+# .mcfunction Essentials v0.0.2-r12 2/16/2018 7:32:21AM
 # Writtten by Nigel Todman (www.NigelTodman.com)
 ## reset triggers, if triggered
-execute as @a[scores={spawn=1..},scores={loopcnt=50..}] run scoreboard players set @s spawn 0
-execute as @a[scores={village1=1..},scores={loopcnt=50..}] run scoreboard players set @s village1 0
+execute as @a[scores={spawn=1..,loopcnt=50..}] run scoreboard players set @s spawn 0
+execute as @a[scores={village1=1..,loopcnt=50..}] run scoreboard players set @s village1 0
 execute as @a[scores={sethome=1..}] run scoreboard players set @s sethome 0
 execute as @a[scores={home=1..}] run scoreboard players set @s home 0
 execute as @a[scores={rtp=1..}] run scoreboard players set @s rtp 0
