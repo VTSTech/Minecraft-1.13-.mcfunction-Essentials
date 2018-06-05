@@ -1,4 +1,4 @@
-# Minecraft 1.13 .mcfunction Essentials v0.0.2-r12
+# Minecraft 1.13 .mcfunction Essentials v0.0.2-r14
 
 # Written by Nigel Todman (www.NigelTodman.com)
 
@@ -56,7 +56,20 @@ Disable with /trigger sidebar set 2
 
 Changelog:
 
-v0.0.1-r12 12/12/2017 8:07:46PM
+v0.0.2-r14 6/3/2018 9:08:51 AM
+
+Added Nether Quartz Ore AP/Money reward
+Updated Melon harvesting per latest block changes
+Added Elytra, Shulker Boxes and Tridents to the Shop
+Added Many new Warps (World specific)
+Added Page 2 to Warp Book
+Added TDF /trigger to allow players to stop rain.
+
+v0.0.2-r13 XX/XX/2018 8:07:46PM
+
+Internal
+
+v0.0.2-r12 12/12/2017 8:07:46PM
 
 Updated entity selector syntax per latest snapshot
 
