@@ -1,4 +1,4 @@
-# .mcfunction Essentials v0.0.2-r12 2/16/2018 7:32:21AM
+# .mcfunction Essentials v0.0.2-r14 6/3/2018 9:08:51 AM
 # Writtten by Nigel Todman (www.NigelTodman.com)
 #
 # Init config variables
@@ -19,7 +19,7 @@ scoreboard players set @a usebasicincome 1
 scoreboard players set @a useplayerhead 1
 # End_Config
 # Setup Triggers
-#tell @s Initializing .mcfunction Essentials v0.0.1-r12 setup...
+tell @s Initializing .mcfunction Essentials v0.0.1-r14 setup...
 #MOTD Here
 tell @s Welcome to MC.NIGELTODMAN.COM - Get a Warp Book with /trigger getwarpbook, Shop Book with /trigger getshopbook
 #tell @s Adding triggers...
@@ -34,8 +34,20 @@ scoreboard objectives add getwarpbook trigger
 scoreboard objectives add sethome trigger
 scoreboard objectives add home trigger
 scoreboard objectives add sidebar trigger
+scoreboard objectives add tpacheck trigger
+scoreboard objectives add tdf trigger
 ## Custom warps here
 scoreboard objectives add village1 trigger
+scoreboard objectives add x1000 trigger
+scoreboard objectives add x5000 trigger
+scoreboard objectives add x10000 trigger
+scoreboard objectives add x20000 trigger
+scoreboard objectives add x30000 trigger
+scoreboard objectives add z1000 trigger
+scoreboard objectives add z5000 trigger
+scoreboard objectives add z10000 trigger
+scoreboard objectives add z20000 trigger
+scoreboard objectives add z30000 trigger
 # Setup player/scoreboard vars
 #tell @s Adding logic variables...
 scoreboard objectives add coords_x dummy
@@ -50,6 +62,7 @@ scoreboard objectives add loopcnt dummy
 scoreboard objectives add tickcount dummy
 scoreboard objectives add buycheck dummy
 scoreboard objectives add sellcheck dummy
+scoreboard objectives add tpa dummy
 # operations can only compare to another scoreboard objective. Add some for execute if logic
 scoreboard objectives add one dummy
 scoreboard objectives add two dummy
@@ -70,6 +83,9 @@ scoreboard objectives add 2hundred dummy
 scoreboard objectives add thousand dummy
 scoreboard objectives add 2thousand dummy
 scoreboard objectives add 5thousand dummy
+scoreboard objectives add 12thousand dummy
+scoreboard objectives add 30thousand dummy
+scoreboard objectives add 40thousand dummy
 scoreboard objectives add neg6thousand dummy
 scoreboard players set @a zero 0
 scoreboard players set @a one 1
@@ -91,6 +107,9 @@ scoreboard players set @a 2hundred 200
 scoreboard players set @a thousand 1000
 scoreboard players set @a 2thousand 2000
 scoreboard players set @a 5thousand 5000
+scoreboard players set @a 12thousand 12000
+scoreboard players set @a 30thousand 30000
+scoreboard players set @a 40thousand 30000
 scoreboard players set @a neg6thousand -6000
 scoreboard objectives add rnd dummy
 scoreboard objectives add totalkills totalKillCount Kills
@@ -137,7 +156,7 @@ scoreboard objectives add harvest3 minecraft.mined:minecraft.beetroots
 scoreboard objectives add harvest4 minecraft.mined:minecraft.carrots
 scoreboard objectives add harvest5 minecraft.mined:minecraft.potatoes
 scoreboard objectives add harvest6 minecraft.mined:minecraft.cocoa
-scoreboard objectives add harvest7 minecraft.mined:minecraft.melon_block
+scoreboard objectives add harvest7 minecraft.mined:minecraft.melon
 scoreboard objectives add harvest8 minecraft.mined:minecraft.sugar_cane
 scoreboard objectives add harvest9 minecraft.mined:minecraft.red_mushroom
 scoreboard objectives add harvest10 minecraft.mined:minecraft.brown_mushroom
@@ -148,25 +167,28 @@ scoreboard objectives add goldcounter minecraft.mined:minecraft.gold_ore
 scoreboard objectives add redstonecounter minecraft.mined:minecraft.redstone_ore
 scoreboard objectives add diamondcounter minecraft.mined:minecraft.diamond_ore
 scoreboard objectives add lapiscounter minecraft.mined:minecraft.lapis_ore
+scoreboard objectives add quartzcounter minecraft.mined:minecraft.nether_quartz_ore
 scoreboard objectives add coal minecraft.mined:minecraft.coal_ore
 scoreboard objectives add iron minecraft.mined:minecraft.iron_ore
 scoreboard objectives add gold minecraft.mined:minecraft.gold_ore
 scoreboard objectives add redstone minecraft.mined:minecraft.redstone_ore
 scoreboard objectives add diamond minecraft.mined:minecraft.diamond_ore
 scoreboard objectives add lapis minecraft.mined:minecraft.lapis_ore
+scoreboard objectives add quartz minecraft.mined:minecraft.nether_quartz_ore
 scoreboard objectives add rank dummy Rank
 scoreboard objectives add money dummy Money
-scoreboard players set @a killcounter 0
-scoreboard players set @a woodcounter 0
-scoreboard players set @a treecounter 0
-scoreboard players set @a stonecounter 0
-scoreboard players set @a farmcounter 0
-scoreboard players set @a coalcounter 0
-scoreboard players set @a ironcounter 0
-scoreboard players set @a goldcounter 0
-scoreboard players set @a redstonecounter 0
-scoreboard players set @a diamondcounter 0
-scoreboard players set @a lapiscounter 0
+scoreboard players set @s killcounter 0
+scoreboard players set @s woodcounter 0
+scoreboard players set @s treecounter 0
+scoreboard players set @s stonecounter 0
+scoreboard players set @s farmcounter 0
+scoreboard players set @s coalcounter 0
+scoreboard players set @s ironcounter 0
+scoreboard players set @s goldcounter 0
+scoreboard players set @s redstonecounter 0
+scoreboard players set @s diamondcounter 0
+scoreboard players set @s lapiscounter 0
+scoreboard players set @s quartzcounter 0
 # Player Online Time Counter
 scoreboard objectives add timeonline minecraft.custom:minecraft.play_one_minute
 scoreboard objectives add timecheck dummy
@@ -180,7 +202,7 @@ execute as @s run trigger sidebar set 2
 execute as @s[scores={freeshulkerbox=1,setupinit=1}] run give @s minecraft:lime_shulker_box
 # Distributing Basic Income
 execute as @s[scores={usebasicincome=1,setupinit=1}] run scoreboard players operation @s money = @s basicincomeamt
-#tell @s .mcfunction Essentials v0.0.1-r12 Setup Complete!
+#tell @s .mcfunction Essentials v0.0.1-r14 Setup Complete!
 # Setup should only be called once by player. Set starting Rank to 1, AP to 0, Give Warp/Shop Books
 scoreboard players set @s rank 1
 scoreboard players set @s ap 0
